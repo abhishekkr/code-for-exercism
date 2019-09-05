@@ -8,25 +8,11 @@ defmodule RnaTranscription do
   'UGAC'
   """
   @spec to_rna([char]) :: [char]
-  def to_rna(dna) do
-    to_rna(dna, '')
-  end
-  def to_rna([head|tail], rna) when head == 71 do ## 'G' => 71
-    rna ++ 'C' ++ to_rna(tail)
-  end
-  def to_rna([head|tail], rna) when head == 67 do ## 'C' => 67
-    rna ++ 'G' ++ to_rna(tail)
-  end
-  def to_rna([head|tail], rna) when head == 84 do ## 'T' => 84
-    rna ++ 'A' ++ to_rna(tail)
-  end
-  def to_rna([head|tail], rna) when head == 65 do ## 'A' => 65
-    rna ++ 'U' ++ to_rna(tail)
-  end
-  def to_rna([], rna) do
-    rna
-  end
-  def to_rna(_, _) do
-    raise RuntimeError, message: "DNA provided has non-supported characters"
-  end
+  def to_rna(dna), do: do_to_rna(dna, '')
+  defp do_to_rna([?G | tail], rna), do: rna ++ 'C' ++ to_rna(tail)
+  defp do_to_rna([?C | tail], rna), do: rna ++ 'G' ++ to_rna(tail)
+  defp do_to_rna([?T | tail], rna), do: rna ++ 'A' ++ to_rna(tail)
+  defp do_to_rna([?A | tail], rna), do: rna ++ 'U' ++ to_rna(tail)
+  defp do_to_rna([], rna), do: rna
+  defp do_to_rna(_, _), do: raise RuntimeError, message: "DNA provided has non-supported characters"
 end
