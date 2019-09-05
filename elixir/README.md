@@ -16,4 +16,8 @@
 
 * [Nucleotide Count](nucleotide-count/lib/nucleotide_count.ex)
 
+* [Rotational Cipher](rotational-cipher/lib/rotational_cipher.ex)
+
+* [Secret Handshake](secret-handshake/lib/secret_handshake.ex)
+
 ---
