@@ -16,9 +16,9 @@ defmodule Acronym do
   """
   defmacro is_not_alphabet(some_char) do
     quote do: (
-        (unquote(some_char) < 65) or
-        (unquote(some_char) > 90 and unquote(some_char) < 97) or
-        (unquote(some_char) > 122)
+        (unquote(some_char) < ?A) or
+        (unquote(some_char) > ?Z and unquote(some_char) < ?a) or
+        (unquote(some_char) > ?z)
       )
   end
 
