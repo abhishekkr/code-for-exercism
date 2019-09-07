@@ -4,6 +4,20 @@ EXERCISM_WORKSPACE=$(cat ~/.config/exercism/user.json | jq '.workspace' | xargs)
 EXERCISM_DEFAULT_TYPE="elixir"
 EXERCISM_TEAM_MODE=false
 
+file-to-submit(){
+  case $1 in
+  "elixir")
+    ls lib/*.ex  | grep -v '_test' | head -1 | xargs
+    ;;
+  "bash")
+    ls *.sh  | grep -v '_test' | head -1 | xargs
+    ;;
+  **)
+    echo "no file found to submit"
+    ;;
+  esac
+}
+
 exercism-cd(){
   local PROBLEM="$1"
   local TYPE="${2}"
@@ -23,14 +37,13 @@ exercism-cd(){
 exercism-submit(){
   local PROBLEM="$1"
   local TYPE="${2}"
+  [[ -z "${TYPE}" ]] && TYPE="${EXERCISM_DEFAULT_TYPE}"
 
-  set -e
   [[ ! -z ${PROBLEM} ]] && \
     exercism-cd "${PROBLEM}" "${TYPE}"
 
-  exercism submit lib/*.ex
+  exercism submit $(file-to-submit $TYPE)
 
   [[ ! -z ${PROBLEM} ]] && popd
-  set +e
 }
 
