@@ -8,10 +8,14 @@ exercism-cd(){
   local PROBLEM="$1"
   local TYPE="${2}"
 
+  local PATH_TO_CD=""
   [[ -z "${TYPE}" ]] && TYPE="${EXERCISM_DEFAULT_TYPE}"
   [[ "${EXERCISM_TEAM_MODE}" == "true" ]] && PATH_TO_CD="${EXERCISM_WORKSPACE}/teams"
   local INNER_PATH=$(find "${PATH_TO_CD}" -maxdepth 3 -type d | sed "s|${PATH_TO_CD}||g" | grep "${TYPE}/${PROBLEM}" | head -1)
-  local PATH_TO_CD="${PATH_TO_CD}${INNER_PATH}"
+  PATH_TO_CD="${PATH_TO_CD}${INNER_PATH}"
+
+  [[ ! -d "${PATH_TO_CD}" ]] && \
+    PATH_TO_CD=$(find "${EXERCISM_WORKSPACE}" -type d | fzf -e -q ${PROBLEM})
 
   pushd "${PATH_TO_CD}"
 }
@@ -20,11 +24,13 @@ exercism-submit(){
   local PROBLEM="$1"
   local TYPE="${2}"
 
+  set -e
   [[ ! -z ${PROBLEM} ]] && \
     exercism-cd "${PROBLEM}" "${TYPE}"
 
   exercism submit lib/*.ex
 
   [[ ! -z ${PROBLEM} ]] && popd
+  set +e
 }
 

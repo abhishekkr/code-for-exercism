@@ -7,9 +7,9 @@ defmodule RotationalCipher do
   """
   defmacro is_not_alphabet(some_char) do
     quote do: (
-        (unquote(some_char) < 65) or
-        (unquote(some_char) > 90 and unquote(some_char) < 97) or
-        (unquote(some_char) > 122)
+        (unquote(some_char) < ?A) or
+        (unquote(some_char) > ?Z and unquote(some_char) < ?a) or
+        (unquote(some_char) > ?z)
       )
   end
 
@@ -29,7 +29,7 @@ defmodule RotationalCipher do
   end
 
   @spec rotate_alphabet(alphabet :: char, shift :: integer) :: char
-  defp rotate_alphabet(c, shift) when is_not_alphabet(c), do: c
+  defp rotate_alphabet(c, _) when is_not_alphabet(c), do: c
   defp rotate_alphabet(alphabet, shift) when (alphabet <= ?Z and (alphabet + shift) <= ?Z) or (alphabet >= ?a and (alphabet + shift) <= ?z) do
     alphabet + shift
   end
