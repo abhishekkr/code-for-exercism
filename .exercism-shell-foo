@@ -1,0 +1,30 @@
+# source it
+
+EXERCISM_WORKSPACE=$(cat ~/.config/exercism/user.json | jq '.workspace' | xargs)
+EXERCISM_DEFAULT_TYPE="elixir"
+EXERCISM_TEAM_MODE=false
+
+exercism-cd(){
+  local PROBLEM="$1"
+  local TYPE="${2}"
+
+  [[ -z "${TYPE}" ]] && TYPE="${EXERCISM_DEFAULT_TYPE}"
+  [[ "${EXERCISM_TEAM_MODE}" == "true" ]] && PATH_TO_CD="${EXERCISM_WORKSPACE}/teams"
+  local INNER_PATH=$(find "${PATH_TO_CD}" -maxdepth 3 -type d | sed "s|${PATH_TO_CD}||g" | grep "${TYPE}/${PROBLEM}" | head -1)
+  local PATH_TO_CD="${PATH_TO_CD}${INNER_PATH}"
+
+  pushd "${PATH_TO_CD}"
+}
+
+exercism-submit(){
+  local PROBLEM="$1"
+  local TYPE="${2}"
+
+  [[ ! -z ${PROBLEM} ]] && \
+    exercism-cd "${PROBLEM}" "${TYPE}"
+
+  exercism submit lib/*.ex
+
+  [[ ! -z ${PROBLEM} ]] && popd
+}
+
