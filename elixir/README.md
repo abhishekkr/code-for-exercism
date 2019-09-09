@@ -16,6 +16,16 @@
 
 * [Nucleotide Count](nucleotide-count/lib/nucleotide_count.ex)
 
+* [Pig Latin](pig-latin/lib/pig_latin.ex)
+
+* [Protein Translation](protein-translation/lib/protein_translation.ex)
+
+* [Space Age](space-age/lib/space_age.ex)
+
+* [Strain](strain/lib/strain.ex)
+
+* [Word Count](word-count/lib/words.ex)
+
 * [Rotational Cipher](rotational-cipher/lib/rotational_cipher.ex)
 
 * [Secret Handshake](secret-handshake/lib/secret_handshake.ex)
