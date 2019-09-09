@@ -8,15 +8,15 @@ defmodule Words do
   def count(sentence) do
     sentence
     |> Kernel.to_charlist
-    |> wordcount(%{}, [])
+    |> word_count(%{}, [])
   end
 
   @doc """
   Extract all words from text.
   """
-  @spec wordcount(characters :: [char], wc :: map, word :: [char]) :: [String.t()]
-  defp wordcount([], wc, []), do: wc
-  defp wordcount([], wc, word) do
+  @spec word_count(characters :: [char], wc :: map, word :: [char]) :: [String.t()]
+  defp word_count([], wc, []), do: wc
+  defp word_count([], wc, word) do
     wordkey = word |> to_string |> String.downcase
     cond do
       wc[wordkey] |> is_nil ->
@@ -25,17 +25,17 @@ defmodule Words do
         %{wc | wordkey => (wc[wordkey]+1)}
     end
   end
-  defp wordcount([head | tail], wc, []) when head == ?\  or head == ?_, do: wordcount(tail, wc, [])
-  defp wordcount([head | tail], wc, word) when head == ?\  or head == ?_ do
-    new_wc = wordcount([], wc, word)
-    wordcount(tail, new_wc, [])
+  defp word_count([head | tail], wc, []) when head == ?\  or head == ?_, do: word_count(tail, wc, [])
+  defp word_count([head | tail], wc, word) when head == ?\  or head == ?_ do
+    new_wc = word_count([], wc, word)
+    word_count(tail, new_wc, [])
   end
-  defp wordcount([head | tail], wc, word) do
+  defp word_count([head | tail], wc, word) do
     cond do
       allowed?(head) ->
-        wordcount(tail, wc, word ++ [head])
+        word_count(tail, wc, word ++ [head])
       true ->
-        wordcount(tail, wc, word)
+        word_count(tail, wc, word)
     end
   end
 
