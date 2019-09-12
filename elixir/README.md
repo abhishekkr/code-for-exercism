@@ -7,6 +7,10 @@
 
 * [RNA Transcription](rna-transcription/lib/rna_transcription.ex)
 
+* [Word Count](word-count/lib/words.ex)
+
+* [Roman Numerals](./roman-numerals/lib/roman_numerals.ex)
+
 
 ### Extra Exercises
 
@@ -16,18 +20,18 @@
 
 * [Nucleotide Count](nucleotide-count/lib/nucleotide_count.ex)
 
-* [Pig Latin](pig-latin/lib/pig_latin.ex)
-
-* [Protein Translation](protein-translation/lib/protein_translation.ex)
-
-* [Space Age](space-age/lib/space_age.ex)
-
-* [Strain](strain/lib/strain.ex)
-
-* [Word Count](word-count/lib/words.ex)
+* [Secret Handshake](secret-handshake/lib/secret_handshake.ex)
 
 * [Rotational Cipher](rotational-cipher/lib/rotational_cipher.ex)
 
-* [Secret Handshake](secret-handshake/lib/secret_handshake.ex)
+* [Strain](strain/lib/strain.ex)
+
+* [Protein Translation](protein-translation/lib/protein_translation.ex)
+
+* [Pig Latin](pig-latin/lib/pig_latin.ex)
+
+* [Space Age](space-age/lib/space_age.ex)
+
+* [Twelve Days](twelve-days/lib/twelve_days.ex)
 
 ---

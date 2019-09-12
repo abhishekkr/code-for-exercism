@@ -12,6 +12,9 @@ file-to-submit(){
   "bash")
     ls *.sh  | grep -v '_test' | head -1 | xargs
     ;;
+  "racket")
+    ls *.rkt  | grep -v 'test.rkt' | head -1 | xargs
+    ;;
   **)
     echo "no file found to submit"
     ;;

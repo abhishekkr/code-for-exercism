@@ -14,5 +14,16 @@
 
 * [complete list](elixir/README.md)
 
+---
+
+### Racket
+
+* [complete list](racket/README.md)
+
+---
+
+### Bash
+
+* [complete list](bash/README.md)
 
 ---

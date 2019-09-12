@@ -3,15 +3,17 @@
 
 ### Main Track
 
-* [Hello Word](bash/hello-world/hello_world.sh)
+* [Hello Word](hello-world/hello_world.sh)
 
-* [Two Fer](bash/two-fer/two_fer.sh)
+* [Two Fer](two-fer/two_fer.sh)
 
 
 ### Extra Exercises
 
-* [Leap](bash/leap/leap.sh)
+* [Leap](leap/leap.sh)
 
-* [Reverse String](bash/reverse-string/reverse_string.sh)
+* [Reverse String](reverse-string/reverse_string.sh)
+
+* [Resistor Color Duo](resistor-color-duo/resistor_color_duo.sh)
 
 ---
