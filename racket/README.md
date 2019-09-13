@@ -10,6 +10,6 @@
 
 ### Extra Exercises
 
-_WIP_
+* [Reverse String](reverse-string/reverse-string.rkt)
 
 ---
