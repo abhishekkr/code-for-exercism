@@ -11,6 +11,8 @@
 
 * [Roman Numerals](./roman-numerals/lib/roman_numerals.ex)
 
+* [Bob](bob/lib/bob.ex)
+
 
 ### Extra Exercises
 
