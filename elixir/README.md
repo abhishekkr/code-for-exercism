@@ -13,6 +13,8 @@
 
 * [Bob](bob/lib/bob.ex)
 
+* [Beer Song](beer-song/lib/beer_song.ex)
+
 
 ### Extra Exercises
 
@@ -35,5 +37,9 @@
 * [Space Age](space-age/lib/space_age.ex)
 
 * [Twelve Days](twelve-days/lib/twelve_days.ex)
+
+* [Series](series/lib/string_series.ex)
+
+* [Raindrops](raindrops/lib/raindrops.ex)
 
 ---
