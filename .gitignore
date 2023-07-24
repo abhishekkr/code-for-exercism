@@ -14,3 +14,4 @@ temp/*
 teams/**
 **/_build
 **/deps
+**/.ballerina

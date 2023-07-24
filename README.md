@@ -2,24 +2,12 @@
 
 > [exercism.io profile](https://exercism.io/profiles/abhishekkr)
 
-### Elixir
+* [Elixir](elixir/README.md)
 
-* [Acronym](elixir/acronym/lib/acronym.ex)
+* [Racket](racket/README.md)
 
-* [Rotational Cipher](rotational-cipher/lib/rotational_cipher.ex)
+* [Bash](bash/README.md)
 
-* [complete list](elixir/README.md)
-
----
-
-### Racket
-
-* [complete list](racket/README.md)
-
----
-
-### Bash
-
-* [complete list](bash/README.md)
+* [Zig](zig/README.md)
 
 ---
