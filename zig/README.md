@@ -9,4 +9,6 @@
 
 * [Pangram](pangram/pangram.zig)
 
+* [Difference of Squares](difference_of_squares/difference_of_squares.zig)
+
 ---
