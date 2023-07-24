@@ -1,5 +1,5 @@
 pub fn squareOfSum(number: usize) usize {
-    var sum: usize = ((number * (number + 1)) / 2);
+    const sum: usize = ((number * (number + 1)) / 2);
     return sum * sum;
 
     // // NON-ALGEBRAIC METHOD
