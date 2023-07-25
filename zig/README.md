@@ -13,4 +13,6 @@
 
 * [Collatz Conjecture](collatz-conjecture/collatz_conjecture.zig)
 
+* [Isogram](isogram/isogram.zig)
+
 ---
