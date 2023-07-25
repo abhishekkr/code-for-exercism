@@ -15,4 +15,6 @@
 
 * [Isogram](isogram/isogram.zig)
 
+* [Hamming](hamming/hamming.zig)
+
 ---
